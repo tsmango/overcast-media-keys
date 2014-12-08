@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Media Keys for Overcast - Options</title>
+  <style>
+    #status {
+      text-align: center;
+    }
+
+    #body {
+      padding: 5px 10px 10px 10px;
+    }
+
+    #body p {
+      margin: 0;
+    }
+
+    #body p + p {
+      margin-top: 5px;
+    }
+
+    #footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 10px 10px 5px 10px;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="status"></div>
+
+  <div id="body">
+    <p>
+      <label>
+        <input id="display-time-remaining" type="checkbox"/> Append time remaining to player.
+      </label>
+    </p>
+
+    <p>
+      <label>
+        <input id="open-links-in-new-tabs" type="checkbox"/> Open links in new tabs.
+      </label>
+    </p>
+  </div>
+
+  <div id="footer">
+    <button id="save">Save</button>
+  </div>
+
+  <script type="text/javascript" src="options.js"></script>
+</body>
+</html>

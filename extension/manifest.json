@@ -1,6 +1,6 @@
 {
   "name": "Media Keys for Overcast",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -44,7 +44,16 @@
   "content_scripts": [
     {
       "matches": ["*://overcast.fm/podcasts/episode/*"],
-      "js": ["overcast-media-keys.js"]
+      "js": [
+        "jquery-2.1.1.min.js",
+        "overcast-media-keys.js"
+      ]
     }
-  ]
+  ],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "permissions": ["storage"]
 }
