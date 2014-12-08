@@ -22,7 +22,7 @@ function save() {
 // Restores checkbox state using the preferences stored in chrome.storage.
 function restore() {
   chrome.storage.sync.get({
-    displayTimeRemaining: true,
+    displayTimeRemaining: false,
     openLinksInNewTabs: false
 
   }, function(items) {

@@ -75,7 +75,7 @@ function openLinksInNewTabs() {
 
 // Update episode page based on options.
 chrome.storage.sync.get({
-  displayTimeRemaining: true,
+  displayTimeRemaining: false,
   openLinksInNewTabs: false
 
 }, function(items) {
