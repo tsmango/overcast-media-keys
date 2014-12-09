@@ -7,7 +7,7 @@ In addition to media key support, there are two options:
 * "Append time remaining to player" - This feature is off by default and attaches a simple time remaining counter to the right side of the player.
 * "Open links in new tabs" - This feature is off by default and simply makes the three links below the player open in new tabs.
 
-This can be enabled or disabled by clicking "Options" in Chrome's "Extensions" area and reloading any already open episode pages on Overcast's site.
+These features can be enabled or disabled by clicking "Options" in Chrome's "Extensions" area and reloading any already open episode pages on Overcast's site.
 
 You can install the extension [here in the Chrome Web Store](https://chrome.google.com/webstore/detail/media-keys-for-overcast/iomjboggdipkbeddinniaoiffjibdach). After installing the extension, reload any tabs already on Overcast's site and your media keys will start working. Keys work globally by default, but can be restricted to only be available while in Chrome by clicking the "Keyboard Shortcuts" link at the bottom of your Extensions preference page in Chrome.
 
