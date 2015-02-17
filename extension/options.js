@@ -1,9 +1,11 @@
 // Saves options to chrome.storage.sync.
 function save() {
   var openLinksInNewTabs = document.getElementById('open-links-in-new-tabs').checked;
+  var sortEpisodesByDate = document.getElementById('sort-episodes-by-date').checked;
 
   chrome.storage.sync.set({
-    openLinksInNewTabs: openLinksInNewTabs
+    openLinksInNewTabs: openLinksInNewTabs,
+    sortEpisodesByDate: sortEpisodesByDate
 
   }, function() {
     // Update status to let user know options were saved.
@@ -20,10 +22,12 @@ function save() {
 // Restores checkbox state using the preferences stored in chrome.storage.
 function restore() {
   chrome.storage.sync.get({
-    openLinksInNewTabs: false
+    openLinksInNewTabs: false,
+    sortEpisodesByDate: false
 
   }, function(items) {
     document.getElementById('open-links-in-new-tabs').checked = items.openLinksInNewTabs;
+    document.getElementById('sort-episodes-by-date').checked  = items.sortEpisodesByDate;
   });
 }
 
