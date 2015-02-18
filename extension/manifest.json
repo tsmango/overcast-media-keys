@@ -6,7 +6,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "description": "Unofficial extension to use your keyboard's media keys with Overcast's web player, plus other optional enhancements. Not affiliated with Overcast Radio, LLC.",
+  "description": "Unofficial extension to use your keyboard's media keys with Overcast's web player, plus other optional enhancements.",
   "homepage_url": "https://github.com/tsmango/overcast-media-keys",
   "manifest_version": 2,
   "commands": {
