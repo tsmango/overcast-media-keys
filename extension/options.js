@@ -1,11 +1,15 @@
 // Saves options to chrome.storage.sync.
 function save() {
-  var openLinksInNewTabs = document.getElementById('open-links-in-new-tabs').checked;
   var sortEpisodesByDate = document.getElementById('sort-episodes-by-date').checked;
+  var highlightEpisodes  = document.getElementById('highlight-episodes').checked;
+  var prependDayOfWeek   = document.getElementById('prepend-day-of-week').checked;
+  var openLinksInNewTabs = document.getElementById('open-links-in-new-tabs').checked;
 
   chrome.storage.sync.set({
-    openLinksInNewTabs: openLinksInNewTabs,
-    sortEpisodesByDate: sortEpisodesByDate
+    sortEpisodesByDate: sortEpisodesByDate,
+    highlightEpisodes:  highlightEpisodes,
+    prependDayOfWeek:   prependDayOfWeek,
+    openLinksInNewTabs: openLinksInNewTabs
 
   }, function() {
     // Update status to let user know options were saved.
@@ -22,12 +26,16 @@ function save() {
 // Restores checkbox state using the preferences stored in chrome.storage.
 function restore() {
   chrome.storage.sync.get({
-    openLinksInNewTabs: false,
-    sortEpisodesByDate: false
+    sortEpisodesByDate: false,
+    highlightEpisodes:  false,
+    prependDayOfWeek:   false,
+    openLinksInNewTabs: false
 
   }, function(items) {
-    document.getElementById('open-links-in-new-tabs').checked = items.openLinksInNewTabs;
     document.getElementById('sort-episodes-by-date').checked  = items.sortEpisodesByDate;
+    document.getElementById('highlight-episodes').checked     = items.highlightEpisodes;
+    document.getElementById('prepend-day-of-week').checked    = items.prependDayOfWeek;
+    document.getElementById('open-links-in-new-tabs').checked = items.openLinksInNewTabs;
   });
 }
 
