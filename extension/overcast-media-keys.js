@@ -1,5 +1,5 @@
 // Sort episodes by date.
-function sortEpisodesByDate(highlightEpisodes, prependDayOfWeek) {
+function sortEpisodesByDate(sortEpisodesByDateAscending, highlightEpisodes, prependDayOfWeek) {
   if($('.episodecell').length > 0) {
     var container = $('<div></div>').attr('class', 'episodes');
     var episodes  = $('.episodecell');
@@ -41,8 +41,22 @@ function sortEpisodesByDate(highlightEpisodes, prependDayOfWeek) {
     episodes = container.find('.episodecell');
 
     episodes.sort(function(x, y){
-      return x.getAttribute('data-date').localeCompare(y.getAttribute('data-date'));
+      return (sortEpisodesByDateAscending ? x.getAttribute('data-date').localeCompare(y.getAttribute('data-date')) : y.getAttribute('data-date').localeCompare(x.getAttribute('data-date')));
     });
+
+    if(episodes.length > 0) {
+      var date = $(episodes[0]).attr('data-date');
+
+      $.each(episodes, function(index, el) {
+        if($(el).attr('data-date') != date) {
+          date = $(el).attr('data-date');
+
+          $(el).css({
+            'margin-top': '25px'
+          });
+        }
+      });
+    }
 
     episodes.detach().appendTo($('.episodes'));
   }
@@ -55,10 +69,11 @@ function openLinksInNewTabs() {
 
 // Update Overcast pages based on options.
 chrome.storage.sync.get({
-  sortEpisodesByDate: false,
-  highlightEpisodes:  false,
-  prependDayOfWeek:   false,
-  openLinksInNewTabs: false
+  sortEpisodesByDate:          false,
+  sortEpisodesByDateAscending: true,
+  highlightEpisodes:           false,
+  prependDayOfWeek:            false,
+  openLinksInNewTabs:          false
 
 }, function(items) {
   if(items.openLinksInNewTabs) {
@@ -66,7 +81,7 @@ chrome.storage.sync.get({
   }
 
   if(items.sortEpisodesByDate) {
-    sortEpisodesByDate(items.highlightEpisodes, items.prependDayOfWeek);
+    sortEpisodesByDate(items.sortEpisodesByDateAscending, items.highlightEpisodes, items.prependDayOfWeek);
   }
 });
 

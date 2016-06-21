@@ -11,8 +11,30 @@
       padding: 5px 10px 10px 10px;
     }
 
+    #body h3 {
+      margin: 0 0 8px 0;
+    }
+
     #body p {
-      margin: 0;
+      margin: 5px 0;
+    }
+
+    #body p input, #body ul li input {
+      margin-top: -3px;
+    }
+
+    #body ul {
+      list-style: none;
+      margin: 0 0 10px 0;
+      -webkit-padding-start: 15px;
+    }
+
+    #body ul li {
+      margin: 5px 0 8px 0;
+    }
+
+    #body ul + h3 {
+      margin-top: 15px;
     }
 
     #footer {
@@ -27,27 +49,45 @@
   <div id="status"></div>
 
   <div id="body">
+    <h3>Front Page</h3>
+
     <p>
       <label>
-        <input id="sort-episodes-by-date" type="checkbox"/> Sort episodes on front page by date.
+        <input id="highlight-episodes" type="checkbox"/> Highlight In-Progress Episodes
       </label>
     </p>
 
     <p>
       <label>
-        <input id="highlight-episodes" type="checkbox"/> Highlight in progress episodes on front page.
+        <input id="prepend-day-of-week" type="checkbox"/> Prepend Day of Week to Episode Dates
       </label>
     </p>
 
     <p>
       <label>
-        <input id="prepend-day-of-week" type="checkbox"/> Prepend day of week to episode dates on front page.
+        <input id="sort-episodes-by-date" type="checkbox"/> Sort Episodes by Date
       </label>
     </p>
 
+    <ul>
+      <li>
+        <label>
+          <input id="sort-episodes-by-date-ascending" type="radio" name="sort-episodes-by-date" value="ascending"/> Oldest to Newest
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input id="sort-episodes-by-date-descending" type="radio" name="sort-episodes-by-date" value="descending"/> Newest to Oldest
+        </label>
+      </li>
+    </ul>
+
+    <h3>Episode Page</h3>
+
     <p>
       <label>
-        <input id="open-links-in-new-tabs" type="checkbox"/> Open links on episode pages in new tabs.
+        <input id="open-links-in-new-tabs" type="checkbox"/> Open Links in New Tabs
       </label>
     </p>
   </div>

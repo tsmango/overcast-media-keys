@@ -4,7 +4,7 @@ This Chrome extension's main feature is to map your keyboard's media keys (previ
 
 In addition to media key support, there are four options:
 
-* "Sort episodes by date" - When enabled, will sort the "All Active Episodes" list by date.
+* "Sort episodes by date" - When enabled, will sort the "All Active Episodes" list by date (oldest or newest first).
 * "Highlight in progress episodes" - When enabled, will highlight any in progress episodes on the "All Active Episodes" list.
 * "Prepend day of week" - When enabled, the day of week will be prepended to the date of each episode in the "All Active Episodes" list.
 * "Open links in new tabs" - When enabled, will simply make the three links below the player on episode pages open in new tabs.
