@@ -30,7 +30,7 @@ function sortEpisodesByDate(sortEpisodesByDateAscending, highlightEpisodes, prep
       }
 
       if(highlightEpisodes) {
-        if((date[3] == 'at') || (date[4] == 'remaining')) {
+        if(date[5] == 'left') {
           $(el).css({'background-color': 'rgba(252, 126, 15, 0.05)'});
         }
       }
